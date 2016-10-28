@@ -13,8 +13,12 @@ use Mix.Config
 # which you typically run after static files are built.
 config :giphy_mcgiface, GiphyMcgiface.Endpoint,
   http: [port: {:system, "PORT"}],
-  url: [host: "example.com", port: 80],
-  cache_static_manifest: "priv/static/manifest.json"
+  url: [scheme: "https", host: "giphy-mcgiface.herokuapp.com", port: 443],
+  force_ssl: [rewrite_on: [:x_forwarded_proto]],
+  secret_key_base: "v4A90PoJnTjpeEynk+La9aoDwgXwHdtaLSnwQGjH3Mou6uWGYxblkFAUI6xtowf4"
+
+config :giphy_mcgiface, GiphyMcgiface.Repo,
+  ssl: true
 
 # Do not print debug messages in production
 config :logger, level: :info
@@ -55,7 +59,3 @@ config :logger, level: :info
 #
 #     config :giphy_mcgiface, GiphyMcgiface.Endpoint, server: true
 #
-
-# Finally import the config/prod.secret.exs
-# which should be versioned separately.
-import_config "prod.secret.exs"

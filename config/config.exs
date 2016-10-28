@@ -26,6 +26,12 @@ config :logger, :console,
 config :phoenix, :generators,
   binary_id: true
 
+# Configure your database
+config :giphy_mcgiface, GiphyMcgiface.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  url: System.get_env("DATABASE_URL"),
+  pool_size: System.get_env("DB_POOL") || 10
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"
