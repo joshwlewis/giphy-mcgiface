@@ -18,7 +18,6 @@ dependencies:
     - yes | mix local.rebar
 database:
   override:
-    - mix ecto.drop
     - mix ecto.create
     - mix ecto.migrate
 test:
