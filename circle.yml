@@ -2,6 +2,7 @@ machine:
   environment:
     PATH: "$HOME/.asdf/bin:$HOME/.asdf/shims:$PATH"
     MIX_ENV: "test"
+    DATABASE_URL: "postgres://localhost:5432/giphy_test"
 dependencies:
   cache_directories:
     - ~/.asdf
