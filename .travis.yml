@@ -9,7 +9,6 @@ addons:
 notifications:
   email: false
 env:
-  - MIX_ENV=test
-  - DATABASE_URL="postgres://localhost:5432/giphy_test"
+  - MIX_ENV=test DATABASE_URL="postgres://localhost:5432/giphy_test"
 before_script:
   - mix ecto.create
