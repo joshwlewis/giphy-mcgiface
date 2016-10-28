@@ -1,4 +1,7 @@
 {
+  "addons": [
+    "heroku-postgresql"
+  ],
   "buildpacks": [
     {"url": "https://github.com/HashNuke/heroku-buildpack-elixir"}
   ]
