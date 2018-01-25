@@ -12,4 +12,4 @@ config :logger, level: :warn
 # Configure your database
 config :giphy_mcgiface, GiphyMcgiface.Repo,
   url: System.get_env("DATABASE_URL"),
-  pool: Ecto.Adapters.SQL.Sandbox,
+  pool: Ecto.Adapters.SQL.Sandbox
